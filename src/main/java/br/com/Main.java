@@ -11,6 +11,7 @@ public class Main {
         System.out.println("Guilherme");
         System.out.println("Enzo");
         System.out.println("Lucas");
+        System.out.println("Antonio");
 // Menu inicial
         do {
             printCabecalho();
