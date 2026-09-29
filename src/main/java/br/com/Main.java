@@ -9,6 +9,7 @@ public class Main {
         int opcao, opcao2;
         System.out.println("Barbara");
         System.out.println("Guilherme");
+        System.out.println("Enzo");
         // Menu inicial
         do {
             printCabecalho();
