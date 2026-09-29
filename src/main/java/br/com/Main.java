@@ -10,7 +10,8 @@ public class Main {
         System.out.println("Barbara");
         System.out.println("Guilherme");
         System.out.println("Enzo");
-        // Menu inicial
+        System.out.println("Lucas");
+// Menu inicial
         do {
             printCabecalho();
             System.out.println("MENU PRINCIPAL\n");
