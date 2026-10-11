@@ -3,16 +3,17 @@ package br.com;
 import java.util.Scanner;
 
 public class Main {
+    // Variavel global para podermos utlizar o scanner em qualquer lugar
+    private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         // Declaração de variaveis
-        int opcao, opcao2;
+        int opcao;
         System.out.println("Barbara");
         System.out.println("Guilherme");
         System.out.println("Enzo");
         System.out.println("Lucas");
         System.out.println("Antonio");
-// Menu inicial
+        // Menu inicial
         do {
             printCabecalho();
             System.out.println("MENU PRINCIPAL\n");
@@ -25,17 +26,19 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    printCabecalho();
-                    System.out.println("CADASTRO DE CONTAS");
-                    System.out.println("1 - INCLUSÃO");
-                    System.out.println("2 - ALTERAÇÃO");
-                    System.out.println("3 - CONSULTA");
-                    System.out.println("4 - EXCLUSÃO");
-                    System.out.println("0 - RETORNAR");
-                    System.out.print("OPÇÃO : ");
-                    opcao2 = sc.nextInt();
-                    System.out.println(opcao2);
+                    printCadastroDeContas();
                     break;
+                case 2:
+                    printBaixaDeContas();
+                    break;
+                case 3:
+                    printRelatoriosDeContas();
+                    break;
+                case 0:
+                    printFinalizacao();
+                    break;
+                default:
+                    System.out.println("Opção Inválida");
             }
         } while (opcao != 0);
     }
@@ -43,5 +46,21 @@ public class Main {
     static void printCabecalho() {
         System.out.println("\nXYZ COMERCIO DE PRODUTOS LTDA.");
         System.out.println("SISTEMA DE CONTAS A PAGAR\n");
+    }
+
+    static void printCadastroDeContas() {
+        // TODO
+    }
+
+    static void printBaixaDeContas() {
+        // TODO
+    }
+
+    static void printRelatoriosDeContas() {
+        // TODO
+    }
+
+    static void printFinalizacao() {
+        // TODO
     }
 }
