@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     // Variavel global para podermos utlizar o scanner em qualquer lugar
     private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         // Declaração de variaveis
         int opcao;
@@ -49,7 +50,49 @@ public class Main {
     }
 
     static void printCadastroDeContas() {
-        // TODO
+        int opcao;
+        do {
+            printCabecalho();
+            System.out.println("CADASTRO DE CONTAS");
+            System.out.println("1 - INCLUSÃO");
+            System.out.println("2 - ALTERAÇÃO");
+            System.out.println("3 - CONSULTA");
+            System.out.println("4 - EXCLUSÃO");
+            System.out.println("0 - RETORNAR");
+            System.out.print("OPÇÃO : ");
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    inclusao();
+                    break;
+                case 2:
+                    alteracao();
+                    break;
+                case 3:
+                    consulta();
+                    break;
+                case 4:
+                    exclusao();
+                    break;
+            }
+        } while (opcao != 0);
+    }
+
+    static void inclusao() {
+        //TODO
+    }
+
+    static void alteracao() {
+        //TODO
+    }
+
+    static void consulta() {
+        //TODO
+    }
+
+    static void exclusao() {
+        //TODO
     }
 
     static void printBaixaDeContas() {
