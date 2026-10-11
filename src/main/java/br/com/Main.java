@@ -100,7 +100,41 @@ public class Main {
     }
 
     static void printRelatoriosDeContas() {
-        // TODO
+        int opcao;
+        do {
+            printCabecalho();
+            System.out.println("RELATÓRIOS");
+            System.out.println("1 - CONTAS A PAGAR");
+            System.out.println("2 - CONTAS A ATRASADAS");
+            System.out.println("3 - BALANÇO DE DESPESAS");
+            System.out.println("0 - RETORNAR");
+            System.out.print("OPÇÃO : ");
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    contasPagar();
+                    break;
+                case 2:
+                    contasAtrasadas();
+                    break;
+                case 3:
+                    balancoDeDespesas();
+                    break;
+            }
+        } while (opcao != 0);
+    }
+
+    static void contasPagar() {
+        //TODO
+    }
+
+    static void contasAtrasadas() {
+        //TODO
+    }
+
+    static void balancoDeDespesas() {
+        //TODO
     }
 
     static void printFinalizacao() {
