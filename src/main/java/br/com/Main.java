@@ -104,6 +104,6 @@ public class Main {
     }
 
     static void printFinalizacao() {
-        // TODO
+        System.out.println("FINALIZANDO APLICAÇÃO...");
     }
 }
