@@ -1,10 +1,19 @@
 package br.com;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
     // Variavel global para podermos utlizar o scanner em qualquer lugar
     private static Scanner sc = new Scanner(System.in);
+    // Tamanho máximo dos vetores
+    private static int N = 0;
+    // Dados das Contas
+    static String[] documentos = new String[100];
+    static String[] descricao = new String[100];
+    static String[] benediciario = new String[100];
+    static float[] valorDebito = new float[100];
+    static LocalDate[] dataVencimento = new LocalDate[100];
 
     public static void main(String[] args) {
         // Declaração de variaveis
@@ -39,7 +48,7 @@ public class Main {
                     printFinalizacao();
                     break;
                 default:
-                    System.out.println("Opção Inválida");
+                    System.err.println("Opção Inválida\n");
             }
         } while (opcao != 0);
     }
@@ -61,10 +70,15 @@ public class Main {
             System.out.println("0 - RETORNAR");
             System.out.print("OPÇÃO : ");
             opcao = sc.nextInt();
+            sc.nextLine();
 
             switch (opcao) {
                 case 1:
-                    inclusao();
+                    if (N < 100) {
+                        inclusao();
+                    } else {
+                        System.out.println("Cadastro cheio!");
+                    }
                     break;
                 case 2:
                     alteracao();
@@ -75,12 +89,44 @@ public class Main {
                 case 4:
                     exclusao();
                     break;
+                default:
+                    System.out.println("Opção Inválida");
             }
         } while (opcao != 0);
     }
 
     static void inclusao() {
-        //TODO
+        char opcao1 = 'n';
+        char opcao2 = 'n';
+        do {
+            printCabecalho();
+            System.out.println("INCLUSÃO DE CONTA");
+            System.out.println("DOCUMENTO:");
+            documentos[N] = String.valueOf(sc.nextLine());
+            System.out.println("DESCRIÇÃO:");
+            descricao[N] = sc.nextLine();
+            System.out.println("BENEFEICIÁRIO:");
+            benediciario[N] = sc.nextLine();
+            System.out.println("VALOR:");
+            valorDebito[N] = Float.parseFloat(sc.nextLine());
+            System.out.println("VENCIMENTO: (XXXX-XX-XX)");
+            dataVencimento[N] = LocalDate.parse(sc.nextLine());
+            System.out.print("CONFIRMA INCLUSÃO ( S/N ) ? ");
+            opcao1 = sc.nextLine().charAt(0);
+            if (opcao1 == 's' || opcao1 == 'S') {
+                System.out.println("CONTA CADASTRADA COM SUCESSO!");
+                System.out.println(documentos[N]);
+                System.out.println(descricao[N]);
+                System.out.println(benediciario[N]);
+                System.out.println(valorDebito[N]);
+                System.out.println(dataVencimento[N]);
+                N++;
+            }else{
+                System.out.println("Informações descartadas");
+            }
+            System.out.println("NOVA INCLUSÃO ( S/N ) ?");
+            opcao2 = sc.nextLine().charAt(0);
+        } while (opcao2 != 'n' && opcao2 != 'N');
     }
 
     static void alteracao() {
@@ -121,6 +167,8 @@ public class Main {
                 case 3:
                     balancoDeDespesas();
                     break;
+                default:
+                    System.out.println("Opção Inválida");
             }
         } while (opcao != 0);
     }
