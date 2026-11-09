@@ -133,8 +133,50 @@ public class Main {
         //TODO
     }
 
+    /**
+     * Realiza a consulta de uma conta cadastrada pelo número do documento.
+     * Solicita ao usuário o documento que deseja pesquisar e utiliza o método
+     * pesquisaDocumento() para localizar a conta.
+     * Caso encontre, exibe todas as informações da conta. Caso contrário,
+     * informa que nenhuma conta foi encontrada.
+     */
     static void consulta() {
-        //TODO
+        printCabecalho();
+        System.out.println("CONSULTA DE CONTA");
+        System.out.println("DIGITE O NÚMERO DO DOCUMENTO QUE DESEJA PESQUISAR:");
+        String documentoPesquisado = sc.nextLine();
+        int posicaoPesquisa =  pesquisaDocumento(documentoPesquisado);
+        if ( posicaoPesquisa != -1 ) {
+            System.out.println("CONTA ENCONTRADA COM SUCESSO!");
+            System.out.println(documentos[posicaoPesquisa]);
+            System.out.println(descricao[posicaoPesquisa]);
+            System.out.println(benediciario[posicaoPesquisa]);
+            System.out.println(valorDebito[posicaoPesquisa]);
+            System.out.println(dataVencimento[posicaoPesquisa]);
+        }else {
+            System.out.println("NENHUMA CONTA ENCONTRADA COM O DOCUMENTO " + documentoPesquisado);
+        }
+    }
+
+    /**
+     * Pesquisa um documento no vetor de documentos cadastrados.
+     * Percorre os registros existentes e compara cada documento com o valor
+     * informado, retornando a posição correspondente caso encontre uma
+     * correspondência.
+     *
+     * @param documentoPesquisado Número do documento que será pesquisado.
+     * @return Índice da posição em que o documento foi encontrado no vetor.
+     *         Retorna -1 caso nenhum documento correspondente seja encontrado.
+     */
+    static int pesquisaDocumento(String documentoPesquisado) {
+        // Recebe esse valor por conta de que se o documento não existir sabe-se pelo valor iniciado
+        int posicao = -1;
+        for (int i = 0; i < N; i++) {
+            if (documentos[i].equals(documentoPesquisado)) {
+                posicao = i;
+            }
+        }
+        return posicao;
     }
 
     static void exclusao() {
