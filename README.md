@@ -21,8 +21,6 @@ O projeto é desenvolvido em grupo, seguindo os requisitos propostos na atividad
 # Integrantes
 | Nome | RA | Github |
 | :---: | :---:| :---: |
-| Antonio da Rocha Izoldi |  1072620590  |  https://github.com/miqton |
-| Barbara Zumblick Aguiar | 10726215009 | https://github.com/barbarazumblick |
+| Andriele de Oliveira Antunes | 1072628818 | https://github.com/andrieledeoliveira |
 | Enzo Batista Porto | 10726210468 | https://github.com/enzobporto |
 | Guilherme Weber May | 10726211007 | https://github.com/GuilhermeWeberMay |
-| Lucas Ramos Gonçalves |   1072621376 |  https://github.com/ramosluc4s |
