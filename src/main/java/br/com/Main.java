@@ -211,7 +211,24 @@ import java.util.Scanner;
     }
 
     static void exclusao() {
-        //TODO
+      printCabecalho();
+      System.out.println("EXCLUSÃO DE CONTA");
+      System.out.println("DIGITE O NÚMERO DO DOCUMENTO QUE DESEJA EXCLUIR:");
+      String documentoPesquisado = sc.nextLine(); 
+      int posicaoPesquisa = pesquisaDocumento(documentoPesquisado); 
+      if(posicaoPesquisa != -1){
+      for (int i = posicaoPesquisa; i < N; i++) {
+          documentos[i] = documentos[i + 1]; 
+          benediciario[i] =  benediciario[i + 1]; 
+          valorDebito[i] = valorDebito[i + 1]; 
+          dataVencimento[i] = dataVencimento[i + 1]; 
+          
+      }
+      N--;  
+      System.out.println("EXCLUSAO CONCLUÍDA COM SUCESSO");
+      } else { 
+          System.err.println("NENHUMA CONTA ENCONTRADA COM O DOCUMENTO" + documentoPesquisado);
+      }
     }
 
     static void printBaixaDeContas() {
