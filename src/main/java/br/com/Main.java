@@ -280,7 +280,26 @@ public class Main {
     }
 
     static void contasAtrasadas() {
-        //TODO
+        printCabecalho();
+        System.out.println("CONTAS A ATRASADAS");
+        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("VENCIMENTO \t VALOR \t\t DOCUMENTO \t DESCRIÇÃO \t BENEFICIÁRIO");
+        System.out.println("-----------------------------------------------------------------------------------------------");
+
+        LocalDate hoje = LocalDate.now();
+        int encontrouConta = 0;
+
+        for (int i = 0; i < N; i++) {
+            if (dataVencimento[i] != null && dataVencimento[i].isBefore(hoje)) {
+                System.out.println(dataVencimento[i] + "\t" + valorDebito[i] + "\t\t" + documentos[i] + "\t\t" + descricao[i] + "\t\t" + benediciario[i]);
+                encontrouConta++;
+            }
+        }
+
+        if (encontrouConta == 0) {
+            System.out.println("Nenhuma conta atrasada encontrada.");
+        }
+        System.out.println("-----------------------------------------------------------------------------------------------");
     }
 
     static void balancoDeDespesas() {
